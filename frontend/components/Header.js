@@ -34,7 +34,7 @@ export default function Header() {
         setActiveMobileMenu(styles.hideMobileMenu);
         setHideMobileMenuFon(styles.hideMobileMenuFon);
         body.style.overflow = '';
-        body.style.position = '';
+        // body.style.position = '';
 
         if(clickOnLink) {
             if(btnBurger) {
@@ -47,7 +47,7 @@ export default function Header() {
         setActiveMobileMenu('');
         setHideMobileMenuFon('');
         body.style.overflow = 'hidden';
-        body.style.position = 'fixed';
+        // body.style.position = 'fixed';
     }
     
     function clickBurger() {

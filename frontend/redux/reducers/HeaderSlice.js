@@ -36,7 +36,6 @@ const menuSlice = createSlice({
             });
             anime({
                 targets: text,
-
                 delay: function(el, i) { return i * 100; },
             })
         },
