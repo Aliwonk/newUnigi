@@ -472,5 +472,25 @@ export const textEN = {
                 href: 'https://t.me/ALIWONKI'
             }
         }
+    },
+    aboutPage: {
+        elementsInformation: [
+            {
+                caption: 'Freelance developers',
+                description: `
+                    Ordinary guys who develop
+                    individual projects in a programming language
+                    JavaScript for business.
+                `
+            },
+            {
+                caption: 'Our priority - long-term work',
+                description: `
+                    Building a trusting relationship with
+                    clients, so we take a responsible approach
+                    to work and achieve our goals.
+                `
+            }
+        ]
     }
 };
