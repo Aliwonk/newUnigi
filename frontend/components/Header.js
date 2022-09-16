@@ -227,7 +227,7 @@ export default function Header() {
 
                 <div className={styles.menu}>
                     <MenuEl data={text.header.menu}/>
-                    <div 
+                    {/* <div 
                         className={ styles.dropMenu + ' ' + styles.hideDropMenu}
                         onMouseLeave={ () => { 
                             dispatch( 
@@ -248,7 +248,7 @@ export default function Header() {
                         <div className={styles.dropMenuList}>
                             <ListEl data={text.header.menu[1].dropMenu} />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className={ styles.rightInfo }>

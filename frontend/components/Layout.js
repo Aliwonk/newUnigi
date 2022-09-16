@@ -3,7 +3,6 @@ import Header from './Header';
 import Footer from './Footer';
 import { useSelector } from 'react-redux';
 import FormContacts from './FormContacts';
-import PrivacyPolicy from './PrivacyPolicy';
 
 export default function Layout({ children }) {
     const lang = useSelector(state => state.language.value);
@@ -19,7 +18,6 @@ export default function Layout({ children }) {
             </Head>
             <Header />
             <FormContacts />
-            {/* <PrivacyPolicy /> */}
             <>{ children }</>
             <Footer />
         </>

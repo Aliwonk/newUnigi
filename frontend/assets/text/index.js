@@ -16,13 +16,15 @@ export const textRU = {
     },
     header: {
         menu: [
+            { link: '/', text: 'Главная' },
+            { link: '/service', text: 'Услуги', 
+                // dropMenu: [
+                //     { id: 'landing', link: '/service/landing', text: 'Лендинг' },
+                //     { id: 'internet-shop', link: '/service/internet-shop', text: 'Интернет-Магазин' },
+                //     { id: 'web-app', link: '/service/web-app', text: 'Веб-Приложение' }
+                // ]
+            },
             { link: '/about', text: 'О нас' },
-            { link: '/service', text: 'Услуги', dropMenu: [
-                { id: 'landing', link: '/service/landing', text: 'Лендинг' },
-                { id: 'internet-shop', link: '/service/internet-shop', text: 'Интернет-Магазин' },
-                { id: 'web-app', link: '/service/web-app', text: 'Веб-Приложение' }
-            ]},
-            // { link: '/contacts', text: 'Контакты' }
         ],
         btnContact: {
             text: 'Связаться'
@@ -224,7 +226,191 @@ export const textRU = {
             }
         }
     },
+    servicePage:{
+        caption: 'Услуги',
+        home: 'Главная',
+        atTheMoment: 'Услуги',
+        price: 'Расчитать стоимость',
+        description: 'Рассчитайте стоимость разработки сайта онлайн',
+        button: 'Рассчитать стоимость',
+        help: {
+            caption: 'Помочь выбрать?',
+            inputItems: [
+                {  
+                    type: 'text',
+                    name: 'name',
+                    text: 'Ваше имя',
+                    placeholder: 'Антон'
+                },
+                {
+                    type: 'email',
+                    name: 'email',
+                    text: 'Ваш E-mail',
+                    placeholder: 'super@mail.com'
+                },
+                {
+                    type: 'number',
+                    name: 'phone',
+                    text: 'Ваш телефон',
+                    placeholder: '7 ХХХ-ХХХ-ХХХХ'
+                },
+                
+            ],
+            button: 'Отправить'
+        },
+        consultation: {
+            caption: 'Закажите консультацию по проекту!',
+            name: 'Имя',
+            telephone: 'Телефон',
+            button: 'Отправить',
+            agreement_one: '*Нажимая кнопку вы принимаете ',
+            agreement_two: 'Соглашение об обработке персональных данных'
+        },
+        listService: [
+            { 
+                id: 'landing',
+                text: 'Лендинг', 
+                description: `Создадим одностраничный сайт, 
+                который презентует ваш продукт клиентам.
+                Не требует разработки сложной архитектуры сайта.`,
+                
+                
+                
+            },
+            { 
+                id: 'internet-shop',
+                text: 'Интернет-Магазин', 
+                description: `Сделаем форму электронной торговли,
+                которая позволит вашим клиентам покупать
+                товары и услуги с помощью веб-браузера.` ,
+                
+            },
+            { 
+                id: 'web-app',
+                text: 'Веб-Приложение', 
+                description: `Разработаем технически сложное приложение, 
+                которое поможет в продуктивности вашему бизнесу.`,
+                
+            },
+            
+
+        ],
+        HowWeDevelop:{
+            caption: 'Как разрабатываем',
+            ExploreFirst: 'Сначала исследуем',
+            ExploreFirst_description:'Перед началом разработки мы тщательно исследуем конкурентные ресурсы и выделяем удачные и не очень решения. Именно за счет исследования разрабатывается удобный и простой интерфейс.',
+        },
+        ThenWeDevelop:{
+            caption: 'Затем разрабатываем',
+            subsequence:[
+                {
+                    id: 'Front-end',
+                    caption: 'Front-end',
+                    description: 'Создаем удобный и эффектный интерактив, который оставляет только положительные эмоции.',
+                },
+                {
+                    id: 'Back-end',
+                    caption: 'Back-end',
+                    description: 'Настроим верстку на CMS. Сделаем ресурс полностью редактируемым. Проектируем удобную админ. панель.',
+                },
+                {
+                    id: 'TestingAndLaunch',
+                    caption: 'Тестирование и запуск',
+                    description: 'Тестируем, исправляем все недочеты и запускаем сервис.',
+                },
+                
+            ],
+        },
+        developmentCost:{
+            developmentCost_caption:'Стоимость разработки',
+            developmentCost_text_one:'Мы приводим примерные суммы разработки в зависимости от тематики.',
+            name: 'Услуги',
+            developmentCost_text_two:'Стоимость разработки зависит от функционала будущего веб-приложения и от сложности и эргономики его интерфейса.',
+            price: 'Стоимость',
+            term: 'Срок',
+            developmentCost_button_text_one: 'Оставить ',
+            developmentCost_button_text_two: 'заявку',
+            subsequence:[
+                {
+                    id: 'landing',
+                    name: 'Лендинг',
+                    price: 'от 10 000 ₽',
+                    term: 'от 7 дней',
+                },
+                {
+                    id: 'internet-shop',
+                    name: 'Internet-shop',
+                    price: 'от 60 000 ₽',
+                    term: 'от 1 месяц',
+                },
+                {
+                    id: 'web-app',
+                    name: 'Веб-приложение',
+                    price: 'от 120 000 ₽',
+                    term: 'от 1,5 месяц',
+                },
+            ]
+        },
+        technology:{
+            technology_caption: 'Технологии',
+            technology_frontend_caption: 'Frontend:',
+            technology_backend_caption: 'Backend:',
+            technology_frontend:[
+                {
+                    id: 'html',
+                    name: 'html',
+                },
+                {
+                    id: 'Css/Sass',
+                    name: 'Css/Sass',
+                },
+                {
+                    id: 'javaScript/TypeScript',
+                    name: 'javaScript/TypeScript',
+                },
+                {
+                    id: 'React/Next',
+                    name: 'React/Next',
+                },
+                {
+                    id: 'Webpack',
+                    name: 'Webpack',
+                },
+            ],
+            technology_backend:[
+                {
+                    id: 'NodeJS',
+                    name: 'NodeJS',
+                },
+                {
+                    id: 'Express',
+                    name: 'Express',
+                },
+                {
+                    id: 'NestJS',
+                    name: 'NestJS',
+                },
+                {
+                    id: 'MySql',
+                    name: 'MySql',
+                },
+                {
+                    id: 'MongoDB',
+                    name: 'MongoDB',
+                },
+                {
+                    id: 'Git',
+                    name: 'Git',
+                },
+            ]
+        }
+    },
     aboutPage: {
+        banner: 'Разрабатываем Веб-Приложения',
+        infDev: {
+            caption: 'Независимые Разработчики',
+            description: `Обычные парни, которые разрабатывают индивидуальные проекты на языке программировании JavaScript для бизнеса. Команда состоит из двух человек: Fullstack-разрабочтика и HTML-Верстальщика.`
+        },
         elementsInformation: [
             {
                 caption: 'Независимые разработчики',
@@ -239,7 +425,7 @@ export const textRU = {
                 description: `
                     Выстраиваем доверительные отношения с 
                     клиентами, поэтому мы ответственно подходим 
-                    к работе и достигаем поставленных задач.
+                    к работе.
                 `
             }
         ]
@@ -265,13 +451,13 @@ export const textEN = {
     },
     header: {
         menu: [
-            { link: '/about', text: 'About' },
+            { link: '/', text: 'Main' },
             { link: '/service',  text: 'Service', dropMenu: [
                 { id: 'landing', link: '/service/landing', text: 'Lending' },
                 { id: 'internet-shop', link: '/service/internet-shop', text: 'Internet-Shop' },
                 { id: 'web-app', link: '/service/web-app', text: 'Web-App' }
             ]},
-            // { link: '/contacts', text: 'Contacts' }
+            { link: '/about', text: 'About' },
         ],
         btnContact: {
             text: 'Contact'

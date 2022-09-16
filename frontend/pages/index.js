@@ -115,7 +115,7 @@ export default function Home() {
       }
       return(
         <Link
-            href={value.href}
+            href={'/service'}
             key={index}
           >
                 <div 

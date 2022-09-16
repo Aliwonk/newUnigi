@@ -6,6 +6,79 @@
     width: 100vw
     height: auto
     padding-top: 100px
+    .banner
+        +flexCenter()
+        width: 100vw
+        height: 100vh
+        text-align: center
+        .captionBanner
+            width: 90%
+            position: relative
+            font-weight: 900
+            font-size: clamp(2.3rem, 3vw, 5rem)
+            transform: translateY(-5vw)
+            text-transform: uppercase
+            .text_wrapper
+                position: relative
+                display: inline-block
+                padding-top: 0.2em
+                padding-right: 0.05em
+                padding-bottom: 0.1em
+                overflow: hidden
+                .letters
+                    transform-origin: 0 100%
+                    display: inline-block
+                    line-height: 1em
+        .spotsBanner
+            width: clamp(500px, 60vw, 1500px)
+            height: clamp(500px, 60vw, 1500px)
+            left: -20%
+            top: -10vh
+            background-color: #ebeef8
+            border-radius: 50%
+            text-align: center
+            color: black
+            position: absolute
+            z-index: -1
+    .infDev
+        +flexCol()
+        align-items: center
+        width: 100vw
+        height: 70vh
+        text-align: center
+        .captionInfDev
+            width: 90%
+            position: relative
+            font-weight: 900
+            font-size: clamp(1.7rem, 3vw, 5rem)
+            transform: translateY(-5vw)
+            text-transform: uppercase
+            .text_wrapper
+                position: relative
+                display: inline-block
+                padding-top: 0.2em
+                padding-right: 0.05em
+                padding-bottom: 0.1em
+                overflow: hidden
+                .letters
+                    transform-origin: 0 100%
+                    display: inline-block
+                    line-height: 1em
+        .descInfDev
+            width: 90%
+            position: relative
+            overflow: hidden
+            .text_wrapper
+                font-weight: 500
+                font-size: clamp(1.5rem, 5vw, 2rem)
+                position: relative
+                display: inline-block
+                padding-top: 0.2em
+                padding-right: 0.05em
+                padding-bottom: 0.1em
+                .lettersDesc
+                    display: inline-block
+                    line-height: 1em
     .listEl
         +flexCol()
         align-items: center
@@ -13,7 +86,7 @@
         .caption
             width: 100%
             text-align: center
-            font-size: 2.3rem
+            font-size: 2.1rem
         .information
             +flexRow()
             align-items: center
@@ -33,21 +106,13 @@
                 width: auto
                 height: auto
                 text-align: center
-                font-size: 2.1rem
+                font-size: 2rem
 +mobile()
     .about
         align-items: center
-        .listEl
-            .caption
-                width: 90%
-            .information
-                +flexCol()
-                width: 100%
-                align-items: center
-                .img
-                    width: 160px
-                    margin-right: 0px
-                .description
-                    width: 90%
-                    margin-top: 30px
-                    font-size: 1.5rem
+        .banner
+            .spotsBanner
+                top: 28%
+                left: -69%
+        .infDev
+            height: 58vh

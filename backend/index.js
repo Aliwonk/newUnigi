@@ -1,9 +1,15 @@
 import http from 'http';
 import app from './app.js';
+import dotenv from 'dotenv';
+
+
+dotenv.config({
+    path: './.env'
+});
 
 const server = http.createServer(app);
-server.listen(3001, 'localhost', (err) => {
+server.listen(process.env.PORT, 'localhost', (err) => {
     if(err) return console.log(err);
 
-    console.log('server work on port 3001');
+    console.info(`server work on port: ${process.env.PORT}`);
 });

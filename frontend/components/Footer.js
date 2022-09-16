@@ -27,14 +27,14 @@ export default function Footer() {
     return(
         <div className={styles.footer}>
             <h1 className={styles.logotype}>UNIGI</h1>
-            <div className={styles.menuService}>
+            {/* <div className={styles.menuService}>
                 <h3 className={styles.caption}>
                     {text.footer.menuService.caption}
                 </h3>
                 <div className={styles.menuEl}>
                     <Links data={text.footer.menuService.listService}/>
                 </div>
-            </div>
+            </div> */}
             <div className={styles.contacts}>
                 <h3 className={styles.caption}>
                     {text.footer.contacts.caption}

@@ -1,151 +1,124 @@
 import Head from "next/head";
-import Image from 'next/image';
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
-import anime from 'animejs';
-import styles from '../../styles/About.module.sass'
-import srcImgCoder from '../../assets/img/Coder.svg';
-import srcImgService from '../../assets/img/Service.svg';
-import srcImgSupport from '../../assets/img/Support.svg';
+import anime from "animejs";
+import styles from "../../styles/About.module.sass";
+import srcImgCoder from "../../assets/img/Coder.svg";
+import srcImgBuild from "../../assets/img/Build.svg";
+import srcImgSupport from "../../assets/img/Support.svg";
 
 export default function About() {
-    const text = useSelector(state => state.language.text);
-    const imgRefCoder = useRef();
-    const imgRefSupport = useRef();
-    const descImgCoder = useRef();
-    const descImgSupport = useRef();
+  const text = useSelector((state) => state.language.text);
+  const bannerCaptionRef = useRef();
+  const infDevRef = useRef();
+  const infDevDescRef = useRef(); 
 
+  useEffect(() => {
 
-    useEffect(() => {
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                
-                if(entry.isIntersecting) {
-
-                    anime({
-                        targets: entry.target,
-                        translateY: [-100, 0],
-                        opacity: [0, 1],
-                        scale: [0, 1.5],
-                        duration: 3000
-                    });
-            
-                    anime({
-                        targets: entry.target.nextElementSibling,
-                        translateX: [-40, 0],
-                        translateZ: 0,
-                        rotate: [15, 0],
-                        opacity: [0, 1],
-                        duration: 2000
-                    });
-
-                }
-            });
+    // animation captions
+    const observerCaption = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const parentEl = entry.target.parentElement;
+        const lettersClassName =
+          entry.target.childNodes[0].childNodes[0].className;
+        
+        // animation spots
+        parentEl.childNodes.forEach((value, index) => {
+            if(value.className == styles.spotsBanner) {
+              anime({
+                targets: `.${value.className}`,
+                translateX: [-500, 0],
+                opacity: [0, 1],
+                duration: 2500
+              });
+            }
         });
 
-        observer.observe(imgRefCoder.current);
-        observer.observe(imgRefSupport.current);
+        if (entry.isIntersecting) {
+          anime({
+            targets: `.${entry.target.className} .${lettersClassName}`,
+            translateY: ["1.1em", 0],
+            translateX: ["0.55em", 0],
+            opacity: [0, 1],
+            translateZ: 0,
+            rotateZ: [180, 0],
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: (el, i) => 50 * i,
+          });
+        }
+      });
+    });
 
-    }, []);
+    // animation descriptions
+    const observeDesc = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        console.log(entry.target.className);
+        const lettersClassName =
+          entry.target.childNodes[0].childNodes[0].className;
+        if (entry.isIntersecting) {
+          anime({
+            targets: `.${entry.target.className} .${lettersClassName}`,
+            translateY: ["1.1em", 0],
+            opacity: [0, 1],
+            translateZ: 0,
+            duration: 150,
+            delay: (el, i) => 25 * i,
+          });
+        }
+      });
+    });
 
+    observerCaption.observe(bannerCaptionRef.current);
+    observerCaption.observe(infDevRef.current);
+    observeDesc.observe(infDevDescRef.current);
+  }, []);
 
-    function ElementsInformations() {
-        const imgs = [srcImgCoder, srcImgSupport];
-        const refs = [imgRefCoder, imgRefSupport];
+  function Letters(props) {
+    const className = props.letterClass;
+    const letter = props.text;
+    const array = Array.from(letter);
+    return array.map((value, index) => {
+      return (
+        <span
+          className={className}
+          style={value == " " ? { marginLeft: 5 } : { marginLeft: 0 }}
+          key={index}
+        >
+          {value}
+        </span>
+      );
+    });
+  }
 
-        return text.aboutPage.elementsInformation.map((value, index) => {
-            return(
-                <div
-                    className={styles.listEl}
-                    key={index}
-                >
-                    <h1 
-                        className={styles.caption}
-                        // key={index}
-                    >
-                        {value.caption}
-                    </h1>
-                    <div 
-                        className={styles.information}
-                        // key={index}       
-                    >
-                        <div
-                            className={styles.img}
-                            ref={refs[index]}
-                        >
-                            <Image 
-                                src={imgs[index]}
-                                width={250}
-                                height={250}
-                                alt='icon'
-                            />
-                        </div>
-                        <div 
-                            className={styles.description}
-                        >
-                            {value.description}
-                        </div>
-                    </div>
-                </div>
-
-            )
-        });
-    }
-
-    return (
-        <>
-            <Head>
-                <title>{text.head.title.about}</title>
-            </Head>
-            <div className={styles.about}>
-                <ElementsInformations />
-                {/* <h1 className={styles.caption}>
-                    Независимые разработчики
-                </h1>
-                <div className={styles.information}>
-                    <div
-                        className={styles.img}
-                        ref={imgRefCoder}
-                    >
-                        <Image 
-                            src={srcImgCoder}
-                            width={250}
-                            height={250}
-                            alt='icon development'
-                        />
-                    </div>
-                    <div 
-                        className={styles.description}
-                        ref={descImgCoder}
-                    >
-                        Обычные парни, которые разрабатывают индивидуальные проекты на языке программировании JavaScript для бизнеса.
-                    </div>
-                </div>
-
-                <h1 className={styles.caption}>
-                    Наш приоритет - долгосрочная работа
-                </h1>
-                <div className={styles.information}>
-                    <div
-                        className={styles.img}
-                        ref={imgRefSupport}
-                    >
-                        <Image 
-                            src={srcImgSupport}
-                            width={250}
-                            height={250}
-                            alt='icon support'
-                        />
-                    </div>
-                    <div 
-                        className={styles.description}
-                        ref={descImgSupport}
-                    >
-                        Выстраиваем доверительные отношения с клиентами, поэтому мы ответственно подходим к работе и достигаем поставленных задач.
-                    </div>
-                </div> */}
-            </div>
-        </>
-    )
+  return (
+    <>
+      <Head>
+        <title>{text.head.title.about}</title>
+      </Head>
+      <div className={styles.about}>
+        <div className={styles.banner}>
+          <h1 className={styles.captionBanner} ref={bannerCaptionRef}>
+            <span className={styles.text_wrapper}>
+              <Letters letterClass={styles.letters} text={text.aboutPage.banner} />
+            </span>
+          </h1>
+          <div className={styles.spotsBanner}></div>
+        </div>
+        <div className={styles.infDev}>
+          <h1 className={styles.captionInfDev} ref={infDevRef}>
+            <span className={styles.text_wrapper}>
+              <Letters letterClass={styles.letters} text={text.aboutPage.infDev.caption} />
+            </span>
+          </h1>
+          <p className={styles.descInfDev} ref={infDevDescRef}>
+            <span className={styles.text_wrapper}>
+              <Letters letterClass={styles.lettersDesc} text={text.aboutPage.infDev.description} />
+            </span>
+          </p>
+        </div>
+      </div>
+    </>
+  );
 }
