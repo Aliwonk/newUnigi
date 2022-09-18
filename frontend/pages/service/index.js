@@ -16,6 +16,7 @@ function Service() {
   const bannerCaptionRef = useRef();
   const frontTechRef = useRef();
   const backTechRef = useRef();
+  const decoreBannerCaptionRef = useRef();
 
   useEffect(() => {
     const observerCaptionBanner = new IntersectionObserver((entries) => {
@@ -26,26 +27,36 @@ function Service() {
                 targets: `.${entry.target.className} .${letter.className}`,
                 rotateY: [-90, 0],
                 translateX: [-50, 0],
+                opacity: [0, 1],
                 duration: 1500,
-                delay: (el, i) => 45 * i
+                delay: (el, i) => 50 * i
+            })
+            anime({
+              targets: `.${decoreBannerCaptionRef.current.className}`,
+              scale: [0, 1],
+              opacity: [0, 1],
+              duration: 2300,
             })
         }
       });
     });
     const observerTech = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        console.log(entry);
         if (entry.isIntersecting) {
           const translateX = window.innerWidth < 768 ? 150 : 550;
           anime({
             targets: `.${frontTechRef.current.className}`,
             translateX: [translateX, 0],
+            translateY: [-100, 0],
+            scale: [0.5, 1],
             opacity: [0, 1],
-            duration: 2500,
+            duration: 2800,
           });
           anime({
             targets: `.${backTechRef.current.className}`,
             translateX: [translateX, 0],
+            translateY: [100, 0],
+            scale: [0.5, 1],
             opacity: [0, 1],
             duration: 2500,
             delay: 100,
@@ -100,6 +111,7 @@ function Service() {
       <div className={styles.service}>
         <div className={styles.banner}>
           <div className={styles.bannerCaptionBlock} >
+            <div className={styles.decoreBannerCaption} ref={decoreBannerCaptionRef}></div>
             <h1 className={styles.bannerCaption} ref={bannerCaptionRef}>
               <span className={styles.text_wrapper}>
                 <Letters text={text.servicePage.banner.caption} />
