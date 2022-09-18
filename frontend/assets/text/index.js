@@ -227,6 +227,9 @@ export const textRU = {
         }
     },
     servicePage:{
+        banner: {
+            caption: 'Веб-Разработка',
+        },
         caption: 'Услуги',
         home: 'Главная',
         atTheMoment: 'Услуги',
@@ -351,59 +354,42 @@ export const textRU = {
                 },
             ]
         },
-        technology:{
-            technology_caption: 'Технологии',
-            technology_frontend_caption: 'Frontend:',
-            technology_backend_caption: 'Backend:',
-            technology_frontend:[
-                {
-                    id: 'html',
-                    name: 'html',
-                },
-                {
-                    id: 'Css/Sass',
-                    name: 'Css/Sass',
-                },
-                {
-                    id: 'javaScript/TypeScript',
-                    name: 'javaScript/TypeScript',
-                },
-                {
-                    id: 'React/Next',
-                    name: 'React/Next',
-                },
-                {
-                    id: 'Webpack',
-                    name: 'Webpack',
-                },
-            ],
-            technology_backend:[
-                {
-                    id: 'NodeJS',
-                    name: 'NodeJS',
-                },
-                {
-                    id: 'Express',
-                    name: 'Express',
-                },
-                {
-                    id: 'NestJS',
-                    name: 'NestJS',
-                },
-                {
-                    id: 'MySql',
-                    name: 'MySql',
-                },
-                {
-                    id: 'MongoDB',
-                    name: 'MongoDB',
-                },
-                {
-                    id: 'Git',
-                    name: 'Git',
-                },
-            ]
-        }
+        technology: {
+                frontend: [
+                    {
+                        text: 'html',
+                    },
+                    {
+                        text: 'Css/Sass',
+                    },
+                    {
+                        text: 'javaScript',
+                    },
+                    {
+                        text: 'React/Next',
+                    },
+                    {
+                        text: 'Webpack',
+                    },
+                ],
+                backend: [
+                    {
+                        text: 'NodeJS',
+                    },
+                    {
+                        text: 'Express',
+                    },
+                    {
+                        text: 'NestJS',
+                    },
+                    {
+                        text: 'MySql',
+                    },
+                    {
+                        text: 'MongoDB',
+                    },
+                ]
+        },
     },
     aboutPage: {
         banner: 'Разрабатываем Веб-Приложения',
@@ -411,24 +397,6 @@ export const textRU = {
             caption: 'Независимые Разработчики',
             description: `Обычные парни, которые разрабатывают индивидуальные проекты на языке программировании JavaScript для бизнеса. Команда состоит из двух человек: Fullstack-разрабочтика и HTML-Верстальщика.`
         },
-        elementsInformation: [
-            {
-                caption: 'Независимые разработчики',
-                description: `
-                    Обычные парни, которые разрабатывают 
-                    индивидуальные проекты на языке программировании 
-                    JavaScript для бизнеса.
-                `
-            },
-            {
-                caption: 'Наш приоритет - долгосрочная работа',
-                description: `
-                    Выстраиваем доверительные отношения с 
-                    клиентами, поэтому мы ответственно подходим 
-                    к работе.
-                `
-            }
-        ]
     }
 };
 
@@ -660,23 +628,10 @@ export const textEN = {
         }
     },
     aboutPage: {
-        elementsInformation: [
-            {
-                caption: 'Freelance developers',
-                description: `
-                    Ordinary guys who develop
-                    individual projects in a programming language
-                    JavaScript for business.
-                `
-            },
-            {
-                caption: 'Our priority - long-term work',
-                description: `
-                    Building a trusting relationship with
-                    clients, so we take a responsible approach
-                    to work and achieve our goals.
-                `
-            }
-        ]
+        banner: 'We develop web applications',
+        infDev: {
+            caption: 'Independent Developers',
+            description: `Ordinary guys who develop individual projects in the JavaScript programming language for business. The team consists of two people: Fullstack developer and HTML layout designer.`
+        },
     }
 };

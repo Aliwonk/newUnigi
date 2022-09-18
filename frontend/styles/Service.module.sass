@@ -4,372 +4,113 @@ $hoverColorText: #388af3
 $hoverTextShadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #c8d9ee, 0 0 19px #7faeec, 0 0 30px #388af3cc, 0 0 40px #84b4f3, 0 0 55px #388af3, 0 0 75px #82b6f8
 
 .service
-    display: flex
-    align-items: center
-    flex-direction: column
-    padding-top: 90px
-    height: auto
+    +flexCol()
+    // padding-top: 90px
     width: 100vw
-    .caption
-        display: flex
-        justify-content: center
-        align-items: flex-start
-        flex-direction: column
-        width: 86%
-        height: 20vh
-        background-color: #white
-        .place
-            display: flex
-            justify-content: space-evenly
-            width: 12vw
-            font-size: 15px
+    height: auto
     .banner
-        display: flex
-        height: auto
-        width: 86%
-        
-        
-    .services
-        display: flex
-        flex-direction: row
-        flex-wrap: wrap
-        align-content: space-around
-        justify-content: space-around
-        height: auto
-        width: 85vw 
-        
-            
-        .price
-            height: 85%
-            width: 25%
-            .start
-                font-size: 70px
-            .button
-                display: flex
-                justify-content: center
-                align-items: center
-                height: 10%
-                width: 80%
-                background-color: blue
-                border-radius: 100px
-                color: white
-            .button:hover
-                box-shadow: 22px 22px 35px 0px rgba(34, 60, 80, 0.50)
-        .ListService  
-            display: flex
-            justify-content: space-between
-            .block
-                display: flex
-                flex-direction: column
-                justify-content: space-evenly
-                align-items: flex-start
-                padding: 50px
-                height: 85%
-                width: 25%
-                color: black
-                background: hsla(0, 71%, 99%, 1)
-                background: linear-gradient(45deg, hsla(0, 71%, 99%, 1) 53%, hsla(214, 89%, 59%, 1) 53%)
-                background: -moz-linear-gradient(45deg, hsla(0, 71%, 99%, 1) 53%, hsla(214, 89%, 59%, 1) 53%)
-                background: -webkit-linear-gradient(45deg, hsla(0, 71%, 99%, 1) 53%, hsla(214, 89%, 59%, 1) 53%)
-                .text
-                    
-                    display: flex
-                    width: 100%
-                    font-size: 30px
-                    color: white
-                    text-align: center
-                .description
-                    font-size: 23.4px
-                    padding-bottom: 30px
-                .button
-
-        .help
-            display: flex
-            flex-direction: column
-            
-            height: auto
-            width: 25vw
-            font-size: 29px
-            .elem
-                height: 25.5px
-                width: 80%
-            input
-                display: flex
-                align-items: center
-                padding-left: 10px
-                height: 50px
-                width: 100%
-                border: none
-                border-bottom: 1px solid #2f2c2c
-                outline: none
-                background-color: #f7f9f900
-                color: #b7b8b8
-                font-size: 20px
-                z-index: 1000
-                margin-bottom: 20px
-            
-            textarea
-                height: 100px
-                margin-top: 10px
-                padding-top: 10px
-                padding-left: 10px
-                padding-right: 10px
-                border: 1px solid #ccc
-                border-radius: 10px
-                outline: none
-            input::placeholder
-                    color: transparent
-            textarea::placeholder
-                 color: transparent
-            span
-                position: absolute
-                transform: translateY(-55px)
-                margin-left: 11px
-                color: #ccc
-                font-size: 1.2rem
+        +flexRow()
+        justify-content: center
+        align-items: center
+        width: 100%
+        height: 100vh
+        .bannerCaptionBlock
+            width: 33%
+            .bannerCaption
+                font-size: 3.3vw
+                text-transform: uppercase
                 font-weight: 900
-                transition: .6s
-                user-select: none
-            .button
-                display: flex
-                align-items: center
-                justify-content: center
-                height: 50px
-                width: 170px
-                background-color: #22cc
-                color: #ffffff
-                border-radius: 100px
-                font-size: 20px
-            
-
-            .agreement
-                height: 36px
-                font-size: 15px 
-                margin-bottom: 150px
-        .help textarea:valid + span,        
-        .help textarea:focus + span
-                color: black
-                transform: translateY(-85px)
-                font-size: .8rem
-        .help input:valid + span,        
-        .help input:focus + span
-                color: black
-                transform: translateY(-85px)
-                font-size: .8rem
-        .help input:focus::placeholder
-            color: #bebebe
-        .help textarea:focus::placeholder
-            color: #bebebe
-    .HowWeDevelop
-        height: auto
-        width: 85vw
-        .HowWeDevelop_caption
-            display: flex
-        .ExploreFirst
-            display: flex
-            width: 100%
-            height: auto
-            .ExploreFirst_text
-                height: auto
-                width: 60%
-            .ExploreFirst_img
-                height: auto
-                width: 40%
-                background-color: #22cc
-    .ThenWeDevelop
-        height: auto
-        width: 85%
-        margin-bottom: 100px
-        .ThenWeDevelop_caption
-            width: 30%
-            height: auto
-        .ThenWeDevelop_subsequence
-            display: flex
-            flex-direction: row
-            width: 100%
-            height: auto
-            .subsequence_caption
-                width: 400px
-                height: auto
-            .subsequence_description
-                width: 300px
-                height: auto
-    .developmentCost
-        height: auto
-        width: 85%
-        margin-bottom: 100px
-        .developmentCost_block_one
-            display: flex
-            flex-direction: column
-            flex-wrap: wrap
-            width: 100%
-            height: 300px
-            .developmentCost_text
-                height: auto
-                width: 400px
-        .developmentCost_block_two
-            margin-bottom: 100px
-            .block_two_caption
-                display: flex
-                justify-content: space-between
-                flex-direction: row
-                .block_two_caption_text
-                    width: 200px
-            .block_two_subsubsequence
-                display: flex
-                flex-direction: column
-                justify-content: space-around
-                
-            
-                .DevelopmentCost_index
-                    display: flex
-                    justify-content: space-between
-                    align-items: center
-                    border-bottom: 1px solid #22cc
-                    .DevelopmentCost_value
-                        display: flex
-                        justify-content: space-between
-                        align-items: center
-                        width: 200px
-                        font-size: 20px
-                    .DevelopmentCost_text
-                        width: 200px
-                        font-size: 28px
-        .developmentCost_button
-            display: flex
-            flex-direction: column
-            justify-content: center
-            align-items: center
-            width: 200px
-            height: 200px
-            border: 3px solid #22cc
-            border-radius: 100px
-            .developmentCost_button_text
-                display: flex
-                justify-content: center
-                align-items: center
-                flex-direction: column
-                width: 110px
-                height: 100px
-            h3
-                margin: 4px
-    .technology
-        width: 85%
-        height: auto
-        
-        .technology_caption
-            font-size: 26.8px
-            font-weight: 700
-        .technology_list
-            .technology_frontend_caption
-                font-weight: 700
-            .technology_frontend
-                display: flex
-                flex-direction: row
-                justify-content: space-around
-                .technology_TheBeauty
-                    background-color: #22cc
-                    color: white
-                    height: 80px  
-                    padding: 10px 44px
-                    border-radius: 15px
-            .technology_backend
-                display: flex
-                flex-direction: row
-                justify-content: space-around
-                height: 200px
-                .technology_TheBeauty
-                    background-color: #22cc
-                    color: white
-                    height: 80px    
-                    padding: 10px 44px
-                    border-radius: 15px
-
-
+                margin-right: 50px
+                .text_wrapper
+                    position: relative
+                    display: inline-block
+                    padding-top: 0.1em
+                    padding-right: 0.05em
+                    padding-bottom: 0.15em
+                    .letter
+                        display: inline-block
+                        line-height: 1em
+                        transform-origin: 0 0
+        .bannerTech
+            +flexRow()
+            position: relative
+            width: 50%
+            height: 100%
+            .frontTech
+                width: 100%
+                height: 106%
+                left: 5%
+                padding-top: clamp(120px, 40vw, 180px)
+                border-top-left-radius: 50%
+                border-bottom-left-radius: 50%
+                // background-color: #e3eaff
+                border: 1px solid black
+                position: absolute
+                .frontCaption
+                    position: absolute
+                    color: black
+                    top: 45%
+                    left: -1%
+                    transform: rotate(270deg)
+                    font-size: 1.6rem
+                    text-transform: uppercase
+                .elTech
+                    +flexCenter()
+                    width: 120px
+                    height: 45px
+                    border-radius: 5px
+                    background-color: #f7f8fc
+                    box-shadow: 1px 1px 5px 0px rgba(34, 60, 80, 0.2)
+            .backTech
+                width: 100%
+                height: 106%
+                left: 55%
+                padding-top: clamp(120px, 40vw, 180px)
+                border-top-left-radius: 50%
+                border-bottom-left-radius: 50%
+                background-color: #a2b9ff
+                position: absolute
+                .backCaption
+                    position: absolute
+                    color: black
+                    top: 45%
+                    left: 0%
+                    transform: rotate(270deg)
+                    font-size: 1.6rem
+                    text-transform: uppercase
+                .elTech
+                    +flexCenter()
+                    width: 120px
+                    height: 45px
+                    border-radius: 5px
+                    background-color: #f7f8fc
+                    box-shadow: 1px 1px 5px 0px rgba(34, 60, 80, 0.2)
 +mobile()
     .service
-        .caption
-            width: 90%
-            .place
-                width: 50%
-        .services
+        .banner
+            height: auto
             flex-direction: column
-            .ListService
-                flex-direction: column
-                height: auto
-                width: 90%
-                .block
-                    width: 90% !important
-            .price
-                display: flex
-                flex-direction: column
+            .bannerCaptionBlock
+                +flexCenter()
                 width: 100%
-                .start
-                    width: 100%
-                    font-size: 35px
-                .price_description
-                    width: 100%
-                .button
-                    width: 70%
-            .help
-                margin-top: 50px
-                width: 100%
-                .help_caption
-                    font-size: 35px
-        .HowWeDevelop
-            .HowWeDevelop_caption
-                font-size: 35px
-            .ExploreFirst
-                flex-direction: column
-                .ExploreFirst_text
-                    width: 90%
-                .ExploreFirst_img
-                    height: 200px
-                    width: 200px
-        .ThenWeDevelop
-            .ThenWeDevelop_caption
-                width: 90% 
-            .ThenWeDevelop_subsequence
-                flex-direction: column
-
-
-        .developmentCost
-            .developmentCost_block_one
-                height: auto
-                .developmentCost_text
-                    width: 90%
-            .developmentCost_block_two
-                display: flex
-                flex-direction: row
-                .block_two_caption
-                    flex-direction: column
-                    .block_two_caption_text
-                .block_two_subsubsequence
-            .developmentCost_button
-        .technology
-            .technology_caption
-            .technology_list
-                .technology_frontend_caption
-                .technology_frontend
-                    align-items: center
-                    flex-direction: column !important    
-                    width: 90%
-                    .technology_TheBeauty
-                        display: flex
-                        justify-content: center
-                        width: 80%
-                        margin-bottom: 20px
-                        
-                .technology_backend
-                    height: auto
-                    align-items: center
-                    flex-direction: column !important    
-                    width: 90%
-                    .technology_TheBeauty
-                        display: flex
-                        justify-content: center
-                        width: 80%
-                        margin-bottom: 20px
+                height: 100vh
+                .bannerCaption
+                    font-size: 10vw
+                    margin-right: 0px
+            .bannerTech
+                width: 111%
+                height: 92vh
+                margin-top: 100px
+                margin-bottom: 40px
+                .frontTech
+                    padding-top: 250px
+                    .frontCaption
+                        left: -7%
+                .backTech
+                    padding-top: 250px
+                    left: 50%
+                    .backCaption
+                        left: -5%
                 
 
                         

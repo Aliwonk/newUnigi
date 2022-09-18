@@ -1,310 +1,125 @@
 import { useSelector } from "react-redux";
-import Image from 'next/image';
-import styles from '../../styles/Service.module.sass';
-import iconLanding from '../../assets/icons/lending.svg';
-import iconInternetShop from '../../assets/icons/internet-shop.svg';
-import iconWeb from '../../assets/icons/web-app.svg';
-import right from '../../assets/icons/right.svg'
+import Image from "next/image";
 import Head from "next/head";
-
+import anime from "animejs";
+import styles from "../../styles/Service.module.sass";
+import iconLanding from "../../assets/icons/lending.svg";
+import iconInternetShop from "../../assets/icons/internet-shop.svg";
+import iconWeb from "../../assets/icons/web-app.svg";
+import right from "../../assets/icons/right.svg";
+import { useRef } from "react";
+import { useEffect } from "react";
 
 function Service() {
-    const text = useSelector(state => state.language.text);
-    function ListService(){
-        const imgs = [
-            iconLanding,
-            iconInternetShop,
-            iconWeb
-        ]
-        
-        console.log(text.servicePage.listService)
-        return text.servicePage.listService.map((value,index)=>{
-            
-            return(
-                <>
-                    
-                        <div key={index} className={styles.block}>
-                            <h1 className={styles.text} >
-                                {value.text}
-                            </h1>
-                            <Image 
-                                src={imgs[index]}
-                                    width={400}
-                                    height={300}
-                            />
-                            
-                            <h3 className={styles.description}>
-                                {value.description}
-                            </h3>
-                            <Image src={right} className={styles.button}/>
-                        </div>
-                   
-                </>
-                
-                
-            )
-        })
-    }
-      function InputItems(props) {
-        const data = props.data;
+  const text = useSelector((state) => state.language.text);
+  const bannerTech = useRef();
+  const bannerCaptionRef = useRef();
+  const frontTechRef = useRef();
+  const backTechRef = useRef();
 
-        return data.map((value, index) => {
+  useEffect(() => {
+    const observerCaptionBanner = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            const letter = entry.target.childNodes[0].childNodes[0];
+            anime({
+                targets: `.${entry.target.className} .${letter.className}`,
+                rotateY: [-90, 0],
+                translateX: [-50, 0],
+                duration: 1500,
+                delay: (el, i) => 45 * i
+            })
+        }
+      });
+    });
+    const observerTech = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        console.log(entry);
+        if (entry.isIntersecting) {
+          const translateX = window.innerWidth < 768 ? 150 : 550;
+          anime({
+            targets: `.${frontTechRef.current.className}`,
+            translateX: [translateX, 0],
+            opacity: [0, 1],
+            duration: 2500,
+          });
+          anime({
+            targets: `.${backTechRef.current.className}`,
+            translateX: [translateX, 0],
+            opacity: [0, 1],
+            duration: 2500,
+            delay: 100,
+          })
+        }
+      });
+    });
+    observerCaptionBanner.observe(bannerCaptionRef.current);
+    observerTech.observe(bannerTech.current);
+  }, []);
 
-            if(value.name === 'comment') {
-                return(
-                <div
-                    className={styles.inputItems}
-                    key={index}
-                >
-                    <textarea type={value.type} required name={value.name} placeholder={value.placeholder}/>
-                    <span>{value.text}</span>
-                </div>
-                )
-            }
-            return(
-                <div
-                    className={styles.inputItems}
-                    key={index}
-                >
-                    <input type={value.type} required name={value.name} placeholder={value.placeholder}/>
-                    <span>{value.text}</span>
-                </div>
-            )
-        });
-    }
-    function ThenWeDevelop(){
-        return text.servicePage.ThenWeDevelop.subsequence.map((value,index)=>{
+  function Letters(props) {
+    const letter = props.text;
+    const array = Array.from(letter);
+    return array.map((value, index) => {
+      return (
+        <span 
+          className={styles.letter}
+          key={index} 
+        >
+          {value}
+        </span>
+      );
+    });
+  }
+
+  function ListTech(props) {
+      const tech = props.data;
+      return tech.map((value, index) => {
+
           return(
-            <>
-            <div key={index} >
-                
-                    
-                <h2 className={styles.subsequence_caption}>
-                    {value.caption}
-                </h2>
-                    
-                    
-                <h3 className={styles.subsequence_description}>
-                    {value.description}
-                </h3>
-                    
-                    
-                    
-                
+            <div 
+              className={styles.elTech}
+              style={{
+                marginTop: 25 + index * 5,
+                marginLeft: window.innerWidth < 426 ? 15 + '%' : 25 + '%'
+              }}
+              key={index}
+            >
+              <h4>
+                {value.text}
+              </h4>
             </div>
-            </>
-          )  
-        })
-    }
-    function DevelopmentCost(){
-        return text.servicePage.developmentCost.subsequence.map((value,index)=>{
-            return(
-                <>
-                    
-                        <div key={index} className={styles.DevelopmentCost_index}>
-                            <p className={styles.DevelopmentCost_value}>
-                                {value.name}
-                            </p>
-                            <p className={styles.DevelopmentCost_text}>
-                                {value.price}
-                            </p>
-                            <p className={styles.DevelopmentCost_text}>
-                                {value.term}
-                            </p>
-
-                        </div>
-                    
-                
-                </>
-            )
-        })
-    }
-    function Technology_frontend(){
-        return text.servicePage.technology.technology_frontend.map((value,index)=>{
-            return(
-                <>
-                    
-                        <div key={index} className={styles.technology_TheBeauty}>
-                            <p> {value.name}</p>
-                        </div>
-                        
-
-                    
-                
-                </>
-            )
-        })
-    }
-    function Technology_backend(){
-        return text.servicePage.technology.technology_backend.map((value,index)=>{
-            return(
-                <>
-                    
-                        <div key={index} className={styles.technology_TheBeauty}>
-                            <p> {value.name}</p>
-                        </div>
-                        
-
-                    
-                
-                </>
-            )
-        })
-    }
-    return(
-        <>
-            <Head>
-                <title>{text.head.title.service}</title>
-            </Head>
-            <div className={styles.service}>
-                <div className={styles.banner}>
-                    <h1>{text.servicePage.caption}</h1>
-                </div>
-                
-                
-                
-                <div className={styles.services}>
-                    
-                    <div className={styles.ListService}>
-                        <ListService/>
-                    </div>
-                    
-                    <div className={styles.price}>
-                        <h1 className={styles.start}>
-                            {text.servicePage.price}
-                        </h1>
-                        <h3 className={styles.price_description}>
-                            {text.servicePage.description}
-                        </h3>
-                        <div className={styles.button}>
-                            <h3>
-                                {text.servicePage.button}
-                            </h3>
-                        </div>
-                    </div>
-                    <div className={styles.help}>
-                        <h1 className={styles.help_caption}>
-                            {text.servicePage.help.caption}
-                        </h1>
-                        <div className={styles.elem}>
-                            <animate/>
-                            <anime/>
-                        </div>
-                        <InputItems data={text.servicePage.help.inputItems}/>
-                        <div className={styles.button}>
-                            {text.servicePage.help.button}
-                        </div>
-                        <p className={styles.agreement}>
-                            {text.servicePage.consultation.agreement_one}
-                            {text.servicePage.consultation.agreement_two}
-                        </p>
-                        
-
-                        
-                    </div>
-                </div>
-
-                {/* Разработка */}
-                <div className={styles.HowWeDevelop}>
-                    <h1  className={styles.HowWeDevelop_caption}>
-                        {text.servicePage.HowWeDevelop.caption}
-                    </h1>
-                    <div className={styles.ExploreFirst}>
-                        <div className={styles.ExploreFirst_text}>
-                            <h2>{text.servicePage.HowWeDevelop.ExploreFirst}</h2>
-                            <h3>{text.servicePage.HowWeDevelop.ExploreFirst_description}</h3>
-                        </div>
-                        <div className={styles.ExploreFirst_img}>
-                            dsa
-                        </div>
-                    </div>
-                </div>
-                {/* Затем разрабатываем */}
-                <div className={styles.ThenWeDevelop}>
-                    <h1 className={styles.ThenWeDevelop_caption}>
-                        {text.servicePage.ThenWeDevelop.caption}
-                    </h1>
-                    <div className={styles.ThenWeDevelop_anime}></div>
-                    <div className={styles.ThenWeDevelop_subsequence}>
-                        <ThenWeDevelop/>
-                    </div>
-                </div>
-                {/* стоимость разработки */}
-                <div className={styles.developmentCost}>
-                    <div className={styles.developmentCost_block_one}>
-                        <h1 className={styles.developmentCost_text}>
-                            {text.servicePage.developmentCost.developmentCost_caption}
-                        </h1>
-                        <h2 className={styles.developmentCost_text}>
-                            {text.servicePage.developmentCost.developmentCost_text_one}
-                        </h2>
-                        <h3 className={styles.developmentCost_text}>
-                            {text.servicePage.developmentCost.developmentCost_text_two}
-                        </h3>
-                    </div>
-                    <div className={styles.developmentCost_block_two}>
-                        <div className={styles.block_two_caption}>
-                            <p className={styles.block_two_caption_text}>
-                                {text.servicePage.developmentCost.name}
-                            </p>
-                            <p className={styles.block_two_caption_text}>
-                                {text.servicePage.developmentCost.price}
-                            </p>
-                            <p className={styles.block_two_caption_text}>
-                                {text.servicePage.developmentCost.term}
-                            </p>
-                        </div>
-                        <div>
-                            <div className={styles.block_two_subsubsequence}>
-                                <DevelopmentCost/>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div className={styles.developmentCost_button}>
-                        <Image
-                            src={right}
-                            width={50}
-                            height={50}
-                        />
-                        <div    className={styles.developmentCost_button_text}>
-                            <h3 >
-                                {text.servicePage.developmentCost.developmentCost_button_text_one}
-                                
-                            </h3>
-                            <h3>
-                                {text.servicePage.developmentCost.developmentCost_button_text_two}
-                            </h3>
-                        </div>
-                        
-                    </div>
-                </div>
-                <div className={styles.technology}>
-                    <p className={styles.technology_caption}>
-                        {text.servicePage.technology.technology_caption}
-                    </p>
-                    <div className={styles.technology_list}>
-                        <p className={styles.technology_frontend_caption}>
-                            {text.servicePage.technology.technology_frontend_caption}
-                        </p>
-                        <div className={styles.technology_frontend}>
-                            
-                            < Technology_frontend/>
-                        </div>
-                        <p className={styles.technology_frontend_caption}>
-                            {text.servicePage.technology.technology_backend_caption}
-                        </p>
-                        <div className={styles.technology_backend}>
-                            
-                            <Technology_backend/>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </>
-    )
+          )
+      });
+  }
+  return (
+    <>
+      <Head>
+        <title>{text.head.title.service}</title>
+      </Head>
+      <div className={styles.service}>
+        <div className={styles.banner}>
+          <div className={styles.bannerCaptionBlock} >
+            <h1 className={styles.bannerCaption} ref={bannerCaptionRef}>
+              <span className={styles.text_wrapper}>
+                <Letters text={text.servicePage.banner.caption} />
+              </span>
+            </h1>
+          </div>
+          <div className={styles.bannerTech} ref={bannerTech}>
+              <div className={styles.frontTech} ref={frontTechRef}>
+                <h3 className={styles.frontCaption}>frontend</h3>
+                <ListTech data={text.servicePage.technology.frontend}/>
+              </div>
+              <div className={styles.backTech} ref={backTechRef}>
+                <h3 className={styles.backCaption}>backend</h3>
+                <ListTech data={text.servicePage.technology.backend}/>
+              </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
-
 
 export default Service;

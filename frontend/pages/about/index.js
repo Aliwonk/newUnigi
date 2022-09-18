@@ -54,7 +54,6 @@ export default function About() {
     // animation descriptions
     const observeDesc = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        console.log(entry.target.className);
         const lettersClassName =
           entry.target.childNodes[0].childNodes[0].className;
         if (entry.isIntersecting) {
