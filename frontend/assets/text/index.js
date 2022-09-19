@@ -5,7 +5,8 @@ export const textRU = {
                 site_name: 'Веб-Разработка Unigi',
                 description: 'Разработка веб-инструмента для улучшения продуктиваности вашего бизнеса.',
             },
-            description: 'Разработка веб-инструмента для улучшения продуктивности вашего бизнеса.'
+            description: 'Разработка веб-инструмента для улучшения продуктивности вашего бизнеса.',
+            keywords: 'Веб-Разработка, Сайты, Разработчики, Html, Css, JavaScript,'
         },
         title: {
             main: 'Веб-Разработка unigi | Разработка веб-сайтов и сложных веб приложений',
@@ -230,6 +231,23 @@ export const textRU = {
         banner: {
             caption: 'Веб-Разработка',
         },
+        goods: {
+            caption: 'Продукты, которые мы разрабатываем',
+            list: [
+                {
+                    caption: 'Лендинг',
+                    description: 'Создадим одностраничный сайт, который презентует ваш продукт клиентам. Не требует разработки сложной архитектуры сайта'
+                },
+                {
+                    caption: 'Интернет-Магазин',
+                    description: 'Сделаем форму электронной торговли, которая позволит вашим клиентам покупать товары и услуги с помощью веб-браузера'
+                },
+                {
+                    caption: 'Веб-Приложение',
+                    description: 'Разработаем технически сложное приложение, которое поможет в продуктивности вашему бизнесу.'
+                }
+            ]
+        },
         caption: 'Услуги',
         home: 'Главная',
         atTheMoment: 'Услуги',
@@ -408,7 +426,8 @@ export const textEN = {
                 site_name: 'Web Development Unigi',
                 description: 'Development of a web tool to improve the productivity of your business.',
             },
-            description: 'Development of a web tool to improve the productivity of your business.'
+            description: 'Development of a web tool to improve the productivity of your business.',
+            keywords: 'Web Development, Sites, Development, Html, Css, JavaScript,'
         },
         title: {
             main: 'Web development unigi | Development of websites and complex web applications',
@@ -626,6 +645,47 @@ export const textEN = {
                 href: 'https://t.me/ALIWONKI'
             }
         }
+    },
+    servicePage: {
+        banner: {
+            caption: 'Web-development',
+        },
+        technology: {
+            frontend: [
+                {
+                    text: 'html',
+                },
+                {
+                    text: 'Css/Sass',
+                },
+                {
+                    text: 'javaScript',
+                },
+                {
+                    text: 'React/Next',
+                },
+                {
+                    text: 'Webpack',
+                },
+            ],
+            backend: [
+                {
+                    text: 'NodeJS',
+                },
+                {
+                    text: 'Express',
+                },
+                {
+                    text: 'NestJS',
+                },
+                {
+                    text: 'MySql',
+                },
+                {
+                    text: 'MongoDB',
+                },
+            ]
+        },
     },
     aboutPage: {
         banner: 'We develop web applications',

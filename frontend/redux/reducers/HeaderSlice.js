@@ -74,12 +74,6 @@ const menuSlice = createSlice({
                 opacity: 0,
             });
         },
-        openMobileMenu: state => {
-            state.mobile = true;
-        },
-        closeMobileMenu: state => {
-            state.mobile = false;
-        },
         openFormContact: (state) => {
             const { formFon, logotypeInForm, formContact } = state;
             anime({

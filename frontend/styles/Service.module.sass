@@ -85,6 +85,51 @@ $hoverTextShadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #c8d9ee, 0 0 19px 
                     border-radius: 5px
                     background-color: #f7f8fc
                     box-shadow: 1px 1px 5px 0px rgba(34, 60, 80, 0.2)
+    .goods
+        width: 100vw
+        height: auto
+        margin-top: 140px
+        padding-left: 8%
+        .captionGoodsBlock
+            width: 90%
+            height: 120px
+            font-size: clamp(14px, 2vw, 25px)
+            .captionGoods
+                height: 100%
+                color: #888888
+                overflow: hidden
+                position: relative
+                display: inline-block
+                padding-top: 0.1em
+                padding-right: 0.05em
+                padding-bottom: 0.15em
+                .letter
+                    display: inline-block
+                    line-height: 1em
+        .listGoods
+            +flexCol()
+            width: 100%
+            height: auto
+            margin-top: 30px
+            .elGood
+                +flexRow()
+                align-items: center
+                margin-bottom: 60px
+                .iconGood
+                    +flexCenter()
+                    width: clamp(100px, 10vw, 150px)
+                    height: 100%
+                    border-radius: 45%
+                    margin-right: clamp(30px, 5vw, 50px)
+                    border: 1px solid black
+                .infGood
+                    +flexCol()
+                    width: 50%
+                    .captionInfGood
+                        font-size: clamp(16px, 2.5vw, 30px)
+                        margin-bottom: 0px
+                    .descInfGood
+                        font-size: clamp(14px, 1.5vw, 25px)
 +mobile()
     .service
         .banner
