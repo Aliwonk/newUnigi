@@ -177,6 +177,7 @@ function Service() {
                 src={img[index]}
                 width={150}
                 height={150}
+                alt='icon'
               />
           </div>
           <div className={styles.infGood}>
