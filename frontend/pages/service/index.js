@@ -68,7 +68,6 @@ function Service() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const letter = entry.target.firstChild.childNodes[0].firstChild.className;
-          console.log(entry);
           const elGood = entry.target.childNodes[1].firstChild;
           const iconGood = elGood.firstChild;
           const captionGood = elGood.childNodes[1].firstChild;
@@ -189,6 +188,37 @@ function Service() {
     })
   }
 
+  function StageDevelopment(props) {
+    const data = props.data;
+
+    return data.map((value, index) => {
+      return(
+        <div 
+          className={styles.stage}
+          key={index}
+        >
+          <div className={styles.decoreStage}></div>
+          <div className={styles.infStage}>
+            <h3>{value.caption}</h3>
+            <p>{value.description}</p>
+          </div>
+        </div>
+      )
+    });
+  }
+
+  function Prices(props) {
+    const data = props.data;
+
+    return data.map((value, index) => {
+      return(
+        <div className={styles.elPrice} key={index}>
+          <h3>{value.caption}</h3>
+          <p>{value.price}</p>
+        </div>
+      )
+    });
+  }
   return (
     <>
       <Head>
@@ -225,8 +255,23 @@ function Service() {
             <ListGoods data={text.servicePage.goods.list}/>
           </div>
         </div>
-        <div className={styles.infDev}>
-
+        <div className={styles.stageDev}>
+          <h1 className={styles.captionStageDev}>
+            {text.servicePage.stageDev.caption}
+          </h1>
+          <div className={styles.listStage}>
+            <div className={styles.stepLine}></div>
+            <StageDevelopment data={text.servicePage.stageDev.stage} />
+          </div>
+          <div className={styles.price}>
+            <div className={styles.priceHead}>
+              <h1>{text.servicePage.price.head.caption}</h1>
+              <p>{text.servicePage.price.head.disclaimer}</p>
+            </div>
+            <div className={styles.listPrice}>
+              <Prices data={text.servicePage.price.listPrice}/>
+            </div>
+          </div>
         </div>
       </div>
     </>

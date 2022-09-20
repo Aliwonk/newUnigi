@@ -248,130 +248,43 @@ export const textRU = {
                 }
             ]
         },
-        caption: 'Услуги',
-        home: 'Главная',
-        atTheMoment: 'Услуги',
-        price: 'Расчитать стоимость',
-        description: 'Рассчитайте стоимость разработки сайта онлайн',
-        button: 'Рассчитать стоимость',
-        help: {
-            caption: 'Помочь выбрать?',
-            inputItems: [
-                {  
-                    type: 'text',
-                    name: 'name',
-                    text: 'Ваше имя',
-                    placeholder: 'Антон'
-                },
+        stageDev: {
+            caption: 'Как разрабатывем',
+            stage: [
                 {
-                    type: 'email',
-                    name: 'email',
-                    text: 'Ваш E-mail',
-                    placeholder: 'super@mail.com'
-                },
-                {
-                    type: 'number',
-                    name: 'phone',
-                    text: 'Ваш телефон',
-                    placeholder: '7 ХХХ-ХХХ-ХХХХ'
-                },
-                
-            ],
-            button: 'Отправить'
-        },
-        consultation: {
-            caption: 'Закажите консультацию по проекту!',
-            name: 'Имя',
-            telephone: 'Телефон',
-            button: 'Отправить',
-            agreement_one: '*Нажимая кнопку вы принимаете ',
-            agreement_two: 'Соглашение об обработке персональных данных'
-        },
-        listService: [
-            { 
-                id: 'landing',
-                text: 'Лендинг', 
-                description: `Создадим одностраничный сайт, 
-                который презентует ваш продукт клиентам.
-                Не требует разработки сложной архитектуры сайта.`,
-                
-                
-                
-            },
-            { 
-                id: 'internet-shop',
-                text: 'Интернет-Магазин', 
-                description: `Сделаем форму электронной торговли,
-                которая позволит вашим клиентам покупать
-                товары и услуги с помощью веб-браузера.` ,
-                
-            },
-            { 
-                id: 'web-app',
-                text: 'Веб-Приложение', 
-                description: `Разработаем технически сложное приложение, 
-                которое поможет в продуктивности вашему бизнесу.`,
-                
-            },
-            
-
-        ],
-        HowWeDevelop:{
-            caption: 'Как разрабатываем',
-            ExploreFirst: 'Сначала исследуем',
-            ExploreFirst_description:'Перед началом разработки мы тщательно исследуем конкурентные ресурсы и выделяем удачные и не очень решения. Именно за счет исследования разрабатывается удобный и простой интерфейс.',
-        },
-        ThenWeDevelop:{
-            caption: 'Затем разрабатываем',
-            subsequence:[
-                {
-                    id: 'Front-end',
                     caption: 'Front-end',
-                    description: 'Создаем удобный и эффектный интерактив, который оставляет только положительные эмоции.',
+                    description: 'Создаем внешний вид и интерактив приложения, который будет удобынм для пользователя'
                 },
                 {
-                    id: 'Back-end',
                     caption: 'Back-end',
-                    description: 'Настроим верстку на CMS. Сделаем ресурс полностью редактируемым. Проектируем удобную админ. панель.',
+                    description: 'Разарабатываем внутренную часть сайта, который будет взаимодейстовать с frontend'
                 },
                 {
-                    id: 'TestingAndLaunch',
                     caption: 'Тестирование и запуск',
-                    description: 'Тестируем, исправляем все недочеты и запускаем сервис.',
-                },
-                
-            ],
-        },
-        developmentCost:{
-            developmentCost_caption:'Стоимость разработки',
-            developmentCost_text_one:'Мы приводим примерные суммы разработки в зависимости от тематики.',
-            name: 'Услуги',
-            developmentCost_text_two:'Стоимость разработки зависит от функционала будущего веб-приложения и от сложности и эргономики его интерфейса.',
-            price: 'Стоимость',
-            term: 'Срок',
-            developmentCost_button_text_one: 'Оставить ',
-            developmentCost_button_text_two: 'заявку',
-            subsequence:[
-                {
-                    id: 'landing',
-                    name: 'Лендинг',
-                    price: 'от 10 000 ₽',
-                    term: 'от 7 дней',
-                },
-                {
-                    id: 'internet-shop',
-                    name: 'Internet-shop',
-                    price: 'от 60 000 ₽',
-                    term: 'от 1 месяц',
-                },
-                {
-                    id: 'web-app',
-                    name: 'Веб-приложение',
-                    price: 'от 120 000 ₽',
-                    term: 'от 1,5 месяц',
-                },
+                    description: 'Исправляем недочеты и запускаем приложение'
+                }
             ]
         },
+        price: {
+            head: {
+                caption: 'Стоимость разработки',
+                disclaimer: 'Стоимость разработки зависит от функционала приложения и от сложности его интерфейса. Цены указаны приблизительные'
+            },
+            listPrice: [
+                {
+                    caption: 'Лендинг',
+                    price: 'от 15 000 р'
+                },
+                {
+                    caption: 'Интернет-Магазин',
+                    price: 'от 80 000 р'
+                },
+                {
+                    caption: 'Веб-Приложение',
+                    price: 'от 100 000 р'
+                }
+            ]
+        }, 
         technology: {
                 frontend: [
                     {
@@ -686,6 +599,60 @@ export const textEN = {
                 },
             ]
         },
+        goods: {
+            caption: 'Products that we develop',
+            list: [
+                {
+                    caption: 'Landing',
+                    description: 'We will create a one-page website that will present your product to clients. Does not require the development of complex website architecture'
+                },
+                {
+                    caption: 'Internet-Shop',
+                    description: 'Lets make an e-commerce form that will allow your customers to buy goods and services using a web browser'
+                },
+                {
+                    caption: 'Web-App',
+                    description: 'We will develop a technically complex application that will help your business to be more productive.'
+                }
+            ]
+        },
+        stageDev: {
+            caption: 'How we develop',
+            stage: [
+                {
+                    caption: 'Front-end',
+                    description: 'We create the appearance and interactivity of the application, which will be user-friendly'
+                },
+                {
+                    caption: 'Back-end',
+                    description: 'We develop the internal part of the site that will interact with the frontend'
+                },
+                {
+                    caption: 'Тестирование и запуск',
+                    description: 'Fixing bugs and launching the app'
+                }
+            ]
+        },
+        price: {
+            head: {
+                caption: 'Development cost',
+                disclaimer: 'The cost of development depends on the functionality of the application and the complexity of its interface. Prices are approximate'
+            },
+            listPrice: [
+                {
+                    caption: 'Landing',
+                    price: 'from 15 000 р'
+                },
+                {
+                    caption: 'Internet-Shop',
+                    price: 'from 80 000 р'
+                },
+                {
+                    caption: 'Web Application',
+                    price: 'from 100 000 р'
+                }
+            ]
+        }, 
     },
     aboutPage: {
         banner: 'We develop web applications',

@@ -126,10 +126,84 @@ $hoverTextShadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #c8d9ee, 0 0 19px 
                     +flexCol()
                     width: 50%
                     .captionInfGood
-                        font-size: clamp(16px, 2.5vw, 30px)
+                        font-size: clamp(20px, 2.5vw, 30px)
                         margin-bottom: 0px
                     .descInfGood
-                        font-size: clamp(14px, 1.5vw, 25px)
+                        font-size: clamp(18px, 1.5vw, 25px)
+    .stageDev
+        width: 100vw
+        height: auto
+        margin-top: 100px
+        // padding-left: 8%
+        .captionStageDev
+            font-size: clamp(30px, 6vw, 45px)
+            text-align: center
+        .listStage
+            +flexRow()
+            align-items: center
+            justify-content: center
+            position: relative
+            width: 100%
+            height: 70vh
+            .stepLine
+                width: 100%
+                height: 3px
+                top: 23.3%
+                background-color: #d4d4d4
+                position: absolute
+                z-index: -1
+            .stage
+                +flexCol()
+                width: 350px
+                height: 300px
+                margin-left: 40px
+                .decoreStage
+                    width: 25px
+                    height: 27px
+                    border-radius: 50%
+                    background-color: #acfff4
+                .infStage
+                    width: 100%
+                    height: 100%
+                    margin-top: 10px
+                    h3
+                        font-size: 30px
+                    p
+                        font-size: 23px
+    .price
+        +flexCol()
+        align-items: center
+        width: 100vw
+        height: auto
+        .priceHead
+            +flexCol()
+            align-items: center
+            justify-content: center
+            width: 100%
+            h1
+                font-size: clamp(28px, 5vw, 50px)
+            p
+                width: 80%
+                font-size: clamp(24px, 3vw, 50px)
+                text-align: center
+        .listPrice
+            +flexCol()
+            width: 70%
+            margin-top: 50px
+            margin-bottom: 50px
+            .elPrice
+                +flexRow()
+                height: 80px
+                align-items: center
+                justify-content: space-between
+                margin-bottom: 20px
+                border-bottom: 1px solid #388af3    
+                font-size: clamp(20px, 2vw, 23px)
+                h3
+                    transition: .7s
+            .elPrice:hover
+                h3
+                    transform: translateX(20px)
 +mobile()
     .service
         .banner
@@ -163,6 +237,44 @@ $hoverTextShadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #c8d9ee, 0 0 19px 
                     left: 50%
                     .backCaption
                         left: -5%
+        .stageDev
+            .listStage
+                +flexCol()
+                height: 100vh
+                margin-top: 90px
+                .stepLine
+                    display: none
+                    // width: 170%
+                    // transform: rotate(90deg)
+                    // left: -73.8%
+                    // top: 41%
+                .stage
+                    +flexRow()
+                    width: 310px
+                    margin-left: 0px
+                    .decoreStage
+                        width: 20px
+                        height: 17px
+                        margin-right: 20px
+                        transform: translateY(35px)
+                        background-color: #acfff4
+                        // border: 2px solid black
+                    .infStage
+                        h3
+                            font-size: 23px
+                        p
+                            font-size: 20px
+        .price
+            .priceHead
+                p
+                    text-align: start
+            .listPrice
+                width: 80%
+                .elPrice
+                    flex-direction: column
+                    justify-content: space-evenly
+                    align-items: flex-start
+                    height: auto
                 
 
                         

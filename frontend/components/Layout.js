@@ -17,6 +17,7 @@ export default function Layout({ children }) {
                 <meta name='description' content={text.head.meta.description}/>
                 <meta name='author' content='Aidysh Baldan'/>
                 <meta name='keywords' content={text.head.meta.keywords} />
+                <link rel='canonical' href='http://unigi.ru'/>
             </Head>
             <Header />
             <FormContacts />
