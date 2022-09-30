@@ -76,8 +76,7 @@ export const textRU = {
         listRules: [
             {
                 caption: 'ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ',
-                description: `Я, Балдан Айдыш Петрович, далее unigi.ru, 
-                уделяю большое внимание защите данных, которые вы мне предоставили.
+                description: `Сайт unigi.ru уделяет большое внимание защите данных, которые вы предоставили.
                 Настоящая политика обработки персональных данных составлена в соответствии 
                 с требованиями Федерального закона от 27.07.2006. №152-ФЗ «О персональных данных». 
                 Целями, для которых я собираю ваши персональные данные, являются: улучшение моего сервиса, 
@@ -245,6 +244,10 @@ export const textRU = {
                 {
                     caption: 'Веб-Приложение',
                     description: 'Разработаем технически сложное приложение, которое поможет в продуктивности вашему бизнесу.'
+                },
+                {
+                    caption: 'Мобильное приложение',
+                    description: 'Разработаем приложение заточеный под мобильные устройство. Такое приложение упростит жизнь вашему клиенту и оптимизирует ваш бизнес'
                 }
             ]
         },
@@ -262,7 +265,7 @@ export const textRU = {
                 {
                     caption: 'Тестирование и запуск',
                     description: 'Исправляем недочеты и запускаем приложение'
-                }
+                },
             ]
         },
         price: {
@@ -273,15 +276,19 @@ export const textRU = {
             listPrice: [
                 {
                     caption: 'Лендинг',
-                    price: 'от 15 000 р'
+                    price: 'от 15 000'
                 },
                 {
                     caption: 'Интернет-Магазин',
-                    price: 'от 80 000 р'
+                    price: 'от 40 000'
                 },
                 {
                     caption: 'Веб-Приложение',
-                    price: 'от 100 000 р'
+                    price: 'от 60 000'
+                },
+                {
+                    caption: 'Мобильное приложение',
+                    price: 'от 100 000'
                 }
             ]
         }, 
@@ -408,8 +415,8 @@ export const textEN = {
         listRules: [
             {
                 caption: 'ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ',
-                description: `Я, Балдан Айдыш Петрович, далее unigi.ru, 
-                уделяю большое внимание защите данных, которые вы мне предоставили.
+                description: `Cайт unigi.ru, 
+                уделяет большое внимание защите данных, которые вы предоставили.
                 Настоящая политика обработки персональных данных составлена в соответствии 
                 с требованиями Федерального закона от 27.07.2006. №152-ФЗ «О персональных данных». 
                 Целями, для которых я собираю ваши персональные данные, являются: улучшение моего сервиса, 
@@ -613,6 +620,10 @@ export const textEN = {
                 {
                     caption: 'Web-App',
                     description: 'We will develop a technically complex application that will help your business to be more productive.'
+                },
+                {
+                    caption: 'Mobile app',
+                    description: `We will develop an application tailored for mobile devices. An app like this will make your customer's life easier and optimize your business`
                 }
             ]
         },
@@ -628,7 +639,7 @@ export const textEN = {
                     description: 'We develop the internal part of the site that will interact with the frontend'
                 },
                 {
-                    caption: 'Тестирование и запуск',
+                    caption: 'Testing and launch',
                     description: 'Fixing bugs and launching the app'
                 }
             ]
@@ -641,15 +652,19 @@ export const textEN = {
             listPrice: [
                 {
                     caption: 'Landing',
-                    price: 'from 15 000 р'
+                    price: 'from 15 000'
                 },
                 {
                     caption: 'Internet-Shop',
-                    price: 'from 80 000 р'
+                    price: 'from 40 000'
                 },
                 {
                     caption: 'Web Application',
-                    price: 'from 100 000 р'
+                    price: 'from 60 000'
+                },
+                {
+                    caption: 'Mobile Application',
+                    price: 'from 100 000'
                 }
             ]
         }, 

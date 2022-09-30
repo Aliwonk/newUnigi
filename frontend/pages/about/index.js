@@ -94,6 +94,7 @@ export default function About() {
   return (
     <>
       <Head>
+        <meta name="robots" content="noindex"/>
         <title>{text.head.title.about}</title>
       </Head>
       <div className={styles.about}>

@@ -1,4 +1,6 @@
 import { useSelector } from "react-redux";
+import { useRef } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 import Head from "next/head";
 import anime from "animejs";
@@ -6,8 +8,8 @@ import styles from "../../styles/Service.module.sass";
 import iconLanding from "../../assets/icons/lending.svg";
 import iconInternetShop from "../../assets/icons/internet-shop.svg";
 import iconWeb from "../../assets/icons/web-app.svg";
-import { useRef } from "react";
-import { useEffect } from "react";
+import iconMobile from '../../assets/icons/internet-shop.svg';
+import iconRub from '../../assets/icons/icons8-рубль-16.svg';
 
 function Service() {
   const text = useSelector((state) => state.language.text);
@@ -165,7 +167,7 @@ function Service() {
   };
   function ListGoods(props) {
     const data = props.data;
-    const img = [iconLanding, iconInternetShop, iconWeb];
+    const img = [iconLanding, iconInternetShop, iconWeb, iconMobile];
     return data.map((value, index) => {
       return(
         <div 
@@ -215,7 +217,15 @@ function Service() {
       return(
         <div className={styles.elPrice} key={index}>
           <h3>{value.caption}</h3>
-          <p>{value.price}</p>
+          <p>
+            {value.price} 
+            <Image 
+              src={iconRub}
+              width={20}
+              height={20}
+              alt='icon rub'
+            />
+          </p>
         </div>
       )
     });
@@ -223,6 +233,7 @@ function Service() {
   return (
     <>
       <Head>
+        <meta name='robots' content='index'/>
         <title>{text.head.title.service}</title>
       </Head>
       <div className={styles.service}>

@@ -30,6 +30,7 @@ export default function Privacy() {
     return(
         <>
             <Head>
+                <meta name='robots' content='noindex'/> 
                 <title>
                     {text.head.title.privacyPolicy}
                 </title>
