@@ -124,7 +124,7 @@ export const textRU = {
         listService: [
             { 
                 id: 'landing',
-                href: '/service/landinig', 
+                href: '/service', 
                 text: 'Лендинг', 
                 description: `Создадим одностраничный сайт, 
                 который презентует ваш продукт клиентам.
@@ -132,7 +132,7 @@ export const textRU = {
             },
             { 
                 id: 'internet-shop',
-                href: '/service/internet-shop', 
+                href: '/service', 
                 text: 'Интернет-Магазин', 
                 description: `Сделаем форму электронной торговли,
                 которая позволит вашим клиентам покупать
@@ -140,7 +140,7 @@ export const textRU = {
             },
             { 
                 id: 'web-app',
-                href: '/service/web-app', 
+                href: '/service', 
                 text: 'Веб-Приложение', 
                 description: `Разработаем технически сложное приложение, 
                 которое поможет в продуктивности вашему бизнесу.` 
@@ -276,19 +276,19 @@ export const textRU = {
             listPrice: [
                 {
                     caption: 'Лендинг',
-                    price: 'от 15 000'
+                    price: '~ 15 000'
                 },
                 {
                     caption: 'Интернет-Магазин',
-                    price: 'от 40 000'
+                    price: '~ 40 000'
                 },
                 {
                     caption: 'Веб-Приложение',
-                    price: 'от 60 000'
+                    price: '~ 60 000'
                 },
                 {
                     caption: 'Мобильное приложение',
-                    price: 'от 100 000'
+                    price: '~ 100 000'
                 }
             ]
         }, 
@@ -652,19 +652,19 @@ export const textEN = {
             listPrice: [
                 {
                     caption: 'Landing',
-                    price: 'from 15 000'
+                    price: '~ 15 000'
                 },
                 {
                     caption: 'Internet-Shop',
-                    price: 'from 40 000'
+                    price: '~ 40 000'
                 },
                 {
                     caption: 'Web Application',
-                    price: 'from 60 000'
+                    price: '~ 60 000'
                 },
                 {
                     caption: 'Mobile Application',
-                    price: 'from 100 000'
+                    price: '~ 100 000'
                 }
             ]
         }, 
