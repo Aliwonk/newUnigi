@@ -145,6 +145,13 @@ export const textRU = {
                 description: `Разработаем технически сложное приложение, 
                 которое поможет в продуктивности вашему бизнесу.` 
             },
+            { 
+                id: 'mobile-app',
+                href: '/service', 
+                text: 'Мобильное приложение', 
+                description: `Разработаем приложение заточеный под мобильные устройство. 
+                Такое приложение упростит жизнь вашему клиенту и оптимизирует ваш бизнес.` 
+            },
 
         ]
     },
@@ -484,6 +491,13 @@ export const textEN = {
                 text: 'Web Application',
                 description: `Let's develop a technically complex application,
                 which will help in the productivity of your business.`
+            },
+            { 
+                id: 'mobile-app',
+                href: '/service', 
+                text: 'Mobile Application', 
+                description: `We will develop an application tailored for mobile devices.
+                Such an application will simplify the life of your client and optimize your business.` 
             },
 
         ]

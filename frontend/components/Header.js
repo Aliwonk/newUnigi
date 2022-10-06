@@ -300,14 +300,14 @@ export default function Header() {
             <MenuEl data={text.header.menu} />
           </div>
 
-          <div
+          {/* <div
             className={styles.btnContact}
             onClick={() => {
               dispatch(openFormContact());
             }}
           >
             {text.header.btnContact.text}
-          </div>
+          </div> */}
 
           <div className={styles.footer}>
             <div className={styles.info}>

@@ -10,11 +10,29 @@ function FormContacts() {
     const dispatch = useDispatch()
     const formFon = useRef();
     const logotype = useRef();
+    const [inputField, setInputField] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        comment: '',
+        agree: false,
+    });
 
+    const inputsHandler = (e) =>{
+        setInputField( {[e.target.name]: e.target.value} )
+    }
 
+    function submitData(event) {
+        console.log(inputField);
+        console.log(inputField.name);
+        console.log(inputField.email);
+        console.log(inputField.phone);
+        console.log(inputField.comment);
+        event.preventDefault();
+    }
     function InputItems(props) {
         const data = props.data;
-
+        const inputsValue = [inputField.name, inputField.email, inputField.phone];
         return data.map((value, index) => {
 
             if(value.name === 'comment') {
@@ -23,7 +41,7 @@ function FormContacts() {
                     className={styles.inputItems}
                     key={index}
                 >
-                    <textarea type={value.type} required name={value.name} placeholder={value.placeholder}/>
+                    <textarea type={value.type} value={inputField.comment} onChange={inputsHandler} required name={'comment'} placeholder={value.placeholder}/>
                     <span>{value.text}</span>
                 </div>
                 )
@@ -33,7 +51,7 @@ function FormContacts() {
                     className={styles.inputItems}
                     key={index}
                 >
-                    <input type={value.type} required name={value.name} placeholder={value.placeholder}/>
+                    <input type={value.type} value={inputsValue[index]} onChange={inputsHandler} required name={value.name} placeholder={value.placeholder}/>
                     <span>{value.text}</span>
                 </div>
             )
@@ -73,11 +91,74 @@ function FormContacts() {
                     {text.formContact.caption}
                 </div>
                 <form>
-                    <InputItems data={text.formContact.inputItems}/>
+                    {/* <InputItems data={text.formContact.inputItems}/> */}
+                    <div
+                        className={styles.inputItems}
+                    >
+                        <input 
+                            type='text' 
+                            value={inputField.name} 
+                            onChange={inputsHandler} 
+                            required 
+                            name='name'
+                            placeholder={text.formContact.inputItems[0].placeholder}
+                        />
+                        <span>{text.formContact.inputItems[0].text}</span>
+                    </div>
+                    <div
+                        className={styles.inputItems}
+                    >
+                        <input 
+                            type='email' 
+                            value={inputField.email} 
+                            name='email' 
+                            onChange={inputsHandler} 
+                            required 
+                            placeholder={text.formContact.inputItems[1].placeholder}
+                        />
+                        <span>{text.formContact.inputItems[1].text}</span>
+                    </div>
+                    <div
+                        className={styles.inputItems}
+                    >
+                        <input 
+                            type='number' 
+                            value={inputField.phone} 
+                            name='phone' 
+                            onChange={inputsHandler} 
+                            required 
+                            placeholder={text.formContact.inputItems[2].placeholder}
+                        />
+                        <span>{text.formContact.inputItems[2].text}</span>
+                    </div>
+                    <div
+                        className={styles.inputItems}
+                    >
+                    <textarea 
+                        type='text' 
+                        value={inputField.comment} 
+                        onChange={inputsHandler} 
+                        required 
+                        name='comment'
+                        placeholder={text.formContact.inputItems[3].placeholder}/>
+                    <span>{text.formContact.inputItems[3].text}</span>
+                    </div>
+
+
                     <div className={styles.btns}>
-                        <button>{text.formContact.btnSubmit}</button>
+                        <button 
+                            className={styles.btnSubmit}
+                            onClick={submitData}
+                        >{text.formContact.btnSubmit}</button>
                         <div className={styles.btnAgree}>
-                            <input type='checkbox' id='agree' required/>
+                            <input 
+                                type='checkbox'
+                                id='agree'
+                                name='agree'
+                                onChange={inputsHandler}
+                                value={inputField.agree} 
+                                required
+                            />
                             <Link 
                                 href="/privacyPolicy"
                             >

@@ -68,7 +68,7 @@ export default function Home() {
 
               dispatch(
                 hideServiceForDesktop({
-                  idService: ['#landings', '#internet-shops', '#web-apps']
+                  idService: ['#landings', '#internet-shops', '#web-apps', '#mobile-apps']
                 })
               )
               return;
@@ -77,7 +77,7 @@ export default function Home() {
             dispatch(
                 
               showServiceForDesktop({
-                  idService: ['#landings', '#internet-shops', '#web-apps']
+                  idService: ['#landings', '#internet-shops', '#web-apps', '#mobile-apps']
               })
             
             );
@@ -91,6 +91,7 @@ export default function Home() {
     observer.observe(document.getElementById('landings'));
     observer.observe(document.getElementById('internet-shops'));
     observer.observe(document.getElementById('web-apps'));
+    observer.observe(document.getElementById('mobile-apps'));
 
 
     // 
@@ -111,6 +112,9 @@ export default function Home() {
           break;
         case 'web-app':
           icon = iconWeb;
+          break;
+        case 'mobile-app':
+          icon = iconInternetShop;
           break;
       }
       return(

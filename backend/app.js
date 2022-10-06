@@ -2,8 +2,9 @@ import express from 'express';
 
 const app = express();
 
-app.get('', (req, res) => {
-    res.end('Hello server');
+app.post('/callback', (req, res) => {
+    const { name, email, phone, comment, agree } = req.body;
+    console.log(req.body);
 })
 
 export default app;

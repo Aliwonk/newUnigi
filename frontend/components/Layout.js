@@ -13,12 +13,12 @@ export default function Layout({ children }) {
             <Head>
                 <meta property='og:site_name' content={text.head.meta.og.site_name} />
                 <meta property='og:description' content={text.head.meta.og.description}/>
-                <meta property='og:url' content='http://unigi.ru'/>
+                <meta property='og:url' content='https://unigi.ru'/>
                 <meta name='description' content={text.head.meta.description}/>
                 <meta name='author' content='unigi.ru'/>
                 <meta name='keywords' content={text.head.meta.keywords} />
                 <meta name='robots' content='index'/>
-                <link rel='canonical' href='http://unigi.ru'/>
+                <link rel='canonical' href='https://unigi.ru'/>
             </Head>
             <Header />
             <FormContacts />
