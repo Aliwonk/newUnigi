@@ -256,7 +256,7 @@ export default function Header() {
               ru
             </div>
           </div>
-          <div
+          {/* <div
             className={styles.btnContact}
             onClick={() => {
               dispatch(openFormContact());
@@ -273,7 +273,7 @@ export default function Header() {
             <p className={styles.btnContactText}>
               {text.header.btnContact.text}
             </p>
-          </div>
+          </div> */}
         </div>
       </header>
       <div
